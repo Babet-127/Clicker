@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clicker</title>
+
+    <style>
+      body {
+        font-family: monospace;
+        position: fixed;
+        font-weight: bold;
+      }
+      #counter {
+        display: flex;
+        position: fixed;
+        left: calc(50% - 10px);
+        top: calc(50% - 30px);
+        background-color: white;
+        border: 2px solid brown;
+        width: 20px;
+        height: 20px;
+        justify-content: center;
+        align-content: center;
+      }
+
+      #clicker {
+        background-color: yellow;
+        box-shadow: 6px 6px 15px gray;
+        border-radius: 8px;
+        font-family: monospace;
+        width: 200px;
+        position: fixed;
+        top: 50%;
+        left: calc(50% - 100px);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="counter">0</div>
+      <button id="clicker" onclick="plus()">Let's count!</button>
+    </div>
+    <audio src="piosenka.mp3" id="sound"></audio>
+  </body>
+
+  <script>
+    let plus = () => {
+      // sound.pause();
+      // sound.currentTime = 0;
+      let number = document.getElementById("counter").innerHTML;
+      let newNumber = Number(number) + 1;
+      document.getElementById("counter").innerHTML = newNumber;
+      // var backColors = document.getElementsByTagName("body");
+      document.body.style.backgroundColor =
+        "rgb(" +
+        Math.floor(Math.random() * 256) +
+        ", " +
+        Math.floor(Math.random() * 256) +
+        ", " +
+        Math.floor(Math.random() * 256) +
+        ")";
+      sound.play();
+    };
+  </script>
+</html>
